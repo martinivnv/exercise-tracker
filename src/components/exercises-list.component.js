@@ -41,7 +41,8 @@ function ExercisesList() {
 	function deleteExercise(id) {
 		axios
 			.delete("http://localhost:5000/exercises/" + id)
-			.then((res) => console.log(res.data));
+			.then((res) => console.log(res.data))
+			.catch((err) => console.log(err));
 
 		setList({
 			exercises: list.exercises.filter((ex) => ex._id !== id),

@@ -22,24 +22,12 @@ function EditExercise(props) {
 					description: response.data.description,
 					duration: response.data.duration,
 					date: new Date(response.data.date),
+					users: [response.data.username],
 				});
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
-
-		axios
-			.get("http://localhost:5000/users/")
-			.then((res) => {
-				if (res.data.length > 0) {
-					setPageState({
-						...pageState,
-						users: res.data.map((user) => user.username),
-						username: res.data[0].username,
-					});
-				}
-			})
-			.catch((err) => console.log(err));
 	}, []);
 
 	function onSubmit(e) {

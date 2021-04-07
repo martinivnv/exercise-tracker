@@ -24,6 +24,11 @@ function Navbar() {
 							Create User
 						</Link>
 					</li>
+					<li className="navbar-item">
+						<Link to="/delete" className="nav-link">
+							Delete User
+						</Link>
+					</li>
 				</ul>
 			</div>
 		</nav>
